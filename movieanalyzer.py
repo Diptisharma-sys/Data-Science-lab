@@ -1,8 +1,12 @@
+"""Movie Ratings Analyzer
+Ask the user to input a list of movies with ratings like [("Titanic", 8), ("Inception", 9), ...]. Compute
+the average rating, find the highest-rated movie, and list all movies with rating above the
+average."""
 def movie_analyzer():
     
     print("Enter movies and ratings like: Avatar-9,Matrix-8,Joker-9")
    
-
+    output_count=1
     while True:
         user_input = input("Enter movies and ratings: ").strip()
         
@@ -52,21 +56,23 @@ def movie_analyzer():
                 below_avg.append(movie[0])
 
        
-        output_count=1
+        
         print(f"\nOutput {output_count}:")
 
         print("Average rating:", round(avg_rating, 2))
         print("Highest rated movie:", highest_movie[0])
+        output_count+=1
 
         if len(above_avg) == 0:
             print("Movies above average: None")
         else:
-            print("Movies above average:", *above_avg, sep=", ")
+            print("Movies above average:", *above_avg, sep=" ")
+            """* unpacking operator :unpacks the list and """
 
         if len(below_avg) == 0:
             print("Movies below average: None")
         else:
-            print("Movies below average:", *below_avg, sep=", ")
+            print("Movies below average:", *below_avg, sep="  ")
         print()  
 
 movie_analyzer()

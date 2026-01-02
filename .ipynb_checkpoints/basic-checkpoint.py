@@ -19,5 +19,3 @@ y="20"
 z= int(y)+x
 print(z)
 
-
-
